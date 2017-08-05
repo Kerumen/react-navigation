@@ -96,6 +96,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
 
   _getBackButtonTitle(navigation: Navigation): ?string {
     const header = this.props.router.getScreenConfig(navigation, 'header') || {};
+
     if (header.backTitle === null) {
       return undefined;
     }

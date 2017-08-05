@@ -44,7 +44,7 @@ class HeaderBackButton extends React.PureComponent<DefaultProps, Props, State> {
     tintColor: Platform.select({
       ios: '#037aff',
     }),
-    truncatedTitle: 'Back',
+    truncatedTitle: 'Retour',
   };
 
   state = {};
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 17,
     paddingRight: 10,
+    fontFamily: 'ProximaNova-Regular',
   },
   icon: Platform.OS === 'ios'
     ? {

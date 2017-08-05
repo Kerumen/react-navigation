@@ -55,7 +55,7 @@ type Props = {
   /**
    * Optional custom animation when transitioning between screens.
    */
-  transitionConfig?: (
+    transitionConfig?: (
     transitionProps: NavigationTransitionProps,
     prevTransitionProps: NavigationTransitionProps,
     isModal: boolean,
@@ -173,9 +173,9 @@ class CardStack extends Component<DefaultProps, Props, void> {
       ).transitionSpec,
     };
     if (
-       !!NativeAnimatedModule
-       // Native animation support also depends on the transforms used:
-       && CardStackStyleInterpolator.canUseNativeDriver(isModal)
+      !!NativeAnimatedModule
+      // Native animation support also depends on the transforms used:
+      && CardStackStyleInterpolator.canUseNativeDriver(isModal)
     ) {
       // Internal undocumented prop
       transitionSpec.useNativeDriver = true;
@@ -188,9 +188,9 @@ class CardStack extends Component<DefaultProps, Props, void> {
     headerMode: HeaderMode
   ): ?React.Element<*> {
     const headerConfig: HeaderConfig = this.props.router.getScreenConfig(
-      transitionProps.navigation,
-      'header'
-    ) || {};
+        transitionProps.navigation,
+        'header'
+      ) || {};
 
     if (
       typeof headerConfig.bar !== 'undefined'
@@ -215,7 +215,7 @@ class CardStack extends Component<DefaultProps, Props, void> {
       },
       renderRightComponent: (props: NavigationTransitionProps) => {
         const header = this.props.router.getScreenConfig(props.navigation, 'header') || {};
-        return header.left;
+        return header.right;
       },
       renderTitleComponent: (props: NavigationTransitionProps) => {
         const header = this.props.router.getScreenConfig(props.navigation, 'header') || {};
@@ -342,9 +342,9 @@ class CardStack extends Component<DefaultProps, Props, void> {
     let panHandlers = null;
 
     const cardStackConfig = this.props.router.getScreenConfig(
-      props.navigation,
-      'cardStack'
-    ) || {};
+        props.navigation,
+        'cardStack'
+      ) || {};
 
     // On iOS, the default behavior is to allow the user to pop a route by
     // swiping the corresponding Card away. On Android this is off by default

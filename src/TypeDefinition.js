@@ -130,11 +130,6 @@ export type HeaderConfig = {
    */
   titleStyle?: Style,
 
-  /**
-   * React element to display as a header
-   */
-  bar?: React.Element<*> | HeaderProps => ReactElement<*>
-
   // // Style of title text
   // titleTextStyle?: $NavigationThunk<Object>,
   // // Tint color of navigation bar contents
@@ -177,7 +172,7 @@ export type CardStackConfig = {
    * Whether you can use gestures to dismiss this screen.
    * Defaults to true on iOS, false on Android.
    */
-  gesturesEnabled?: boolean;
+  gesturesEnabled?: bool;
 };
 
 export type NavigationScreenOptions = {
@@ -278,6 +273,7 @@ export type NavigationContainerConfig = {
 export type NavigationStackViewConfig = {
   mode?: 'card' | 'modal',
   headerMode?: HeaderMode,
+  headerComponent?: ReactClass<HeaderProps<*>>,
   cardStyle?: Style,
   onTransitionStart?: () => void,
   onTransitionEnd?: () => void

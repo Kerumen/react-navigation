@@ -24,6 +24,7 @@ export default (routeConfigMap: NavigationRouteConfigMap, stackConfig: StackNavi
     initialRouteName,
     initialRouteParams,
     paths,
+    headerComponent,
     headerMode,
     mode,
     cardStyle,
@@ -41,6 +42,7 @@ export default (routeConfigMap: NavigationRouteConfigMap, stackConfig: StackNavi
   return createNavigationContainer(createNavigator(router)(props => (
     <CardStack
       {...props}
+      headerComponent={headerComponent}
       headerMode={headerMode}
       mode={mode}
       cardStyle={cardStyle}
